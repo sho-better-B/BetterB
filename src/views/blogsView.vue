@@ -1,18 +1,18 @@
 <template>
   <div class="x">
-    <h1>Workout</h1>
-    <Workout/>
+    <h1>Blogs</h1>
+    <Blogs/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Workout from "@/components/workout.vue";
+import Blogs from "@/components/blogs.vue";
 
 @Component({
   components: {
-    Workout,
+    Blogs,
   },
 })
-export default class workoutView extends Vue {}
+export default class blogsView extends Vue {}
 </script>

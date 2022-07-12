@@ -3,12 +3,12 @@ import { Schema, model, connect } from "mongoose";
 // 1. Create an interface representing a document in MongoDB.
 
 interface user {
-  name: string;
-  img: string;
-  email: string;
-  weight: number;
-  height: number;
-  imc: number;
+  // name: string;
+  // img: string;
+  // email: string;
+  // weight: number;
+  // height: number;
+  // imc: number;
 }
 // 2. Create schema unsing typescript
 const userSchema = new Schema<user>({

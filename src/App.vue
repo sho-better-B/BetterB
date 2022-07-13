@@ -6,7 +6,7 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/workout">workout</router-link>|
       <router-link to="/diet">Diet</router-link>|
-      <router-link to="'/blogs'">Blogs</router-link> |
+      <router-link to="/blogs">Blogs</router-link> |
       <router-link to="/signIn">sign In</router-link>
     </nav>
     <router-view />
@@ -21,6 +21,12 @@ export default defineComponent({
 
 <style>
 
+<<<<<<< HEAD
+=======
+/* .nav {
+  margin-left: 420px;
+} */
+>>>>>>> 34c5482ac4172034b8467f857cd9e5c3dc682b57
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,34 +1,53 @@
 import express, { Request, Response } from 'express'
+import mongoose from 'mongoose'
 import { ReceipeModel } from '../dataBase/diet'
-import { MongoClient } from "mongodb";
-const client = new MongoClient("mongodb://localhost:27017/betterB");
-const database = client.db("insertDB");
-
 
 const router = express.Router()
-
+//read recipies
 router.get('/api/diet', async (req: Request, res: Response) => {
   const recipes = await ReceipeModel.find({})
-  return res.status(200).send(recipes)
+  return res.send(recipes)
 })
-
-// const addRecipes = async (req: Request, res: Response)  => {
-//     try {
-//       const body = req.body.nameReceipe
-  
-//       const  Ireecipe= new ReceipeModel({
-//       description: body.description,
-//         status: body.status,
-//       })
-  
-//       const newTodo: ITodo = await todo.save()
-//       const allTodos: ITodo[] = await Todo.find()
-  
-//       res
-//         .status(201)
-//         .json({ message: "Todo added", todo: newTodo, todos: allTodos })
-//     } catch (error) {
-//       throw error
-//     }
-//   }
+//add recipes
+router.post('/api/diet/add', (req: Request, res: Response)  => {
+  let nameReceipe=req.body.nameReceipe
+  const recipe= new ReceipeModel({
+   _id: new mongoose.Types.ObjectId(),
+   nameReceipe:nameReceipe
+  });
+ recipe.save()
+  .then(result=>{
+    console.log("yummy it's delecious")
+ res.json("new recipe is added successfully")
+  }) .catch((error) => {
+    console.log(error)
+    res.json(error); 
+  });
+ })
+ //delete recipe 
+ router.delete('/api/diet/delete',(req: Request, res: Response)=>{
+const  id=req.body._id;
+  ReceipeModel.findByIdAndDelete(id)
+  .then(result=>{
+    console.log("omg why did you delete me ")  
+    res.json(result)
+  })
+  .catch((error) => { console.log(error) });
+ 
+ })
 export {router as dietRouter}
+//update recipe
+router.put('/api/diet/update',(req: Request, res: Response)=>{
+const id = req.body._id;
+const nameReceipes = req.body.nameReceipe;
+ReceipeModel.updateOne({_id:id},{$set:{
+  nameReceipe:nameReceipes
+}})
+.then((result)=>{
+  res.send(result);
+  console.log("updated successfully");
+})
+.catch((error) => { 
+  console.log(error) 
+});
+})

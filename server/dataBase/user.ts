@@ -1,4 +1,4 @@
-import { Document, Schema, model, connect } from "mongoose";
+import { Document, Schema, model } from "mongoose";
 
 // 1. Create a new model interface
 interface IUser extends Document {
@@ -11,9 +11,18 @@ interface IUser extends Document {
 }
 // 2. Create schema unsing typescript
 const UserSchema = new Schema<IUser>({
-  name: String,
-  img: String,
-  email: String,
+  name: {
+    type: String,
+    required: true,
+  },
+  img: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
   weight: Number,
   height: Number,
   imc: Number,

@@ -21,4 +21,4 @@ const WorkoutSchema = new Schema<IWorkout>({
         required:true,
     }
   });
-  export const WorkoutModel = model<IWorkout>("workout", WorkoutSchema);
+  export const WorkoutModel = model<IWorkout>("workouts", WorkoutSchema);

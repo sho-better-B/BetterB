@@ -11,7 +11,7 @@ router.get("/api/diet", async (req: Request, res: Response) => {
 
 //add recipes
 router.post("/api/diet/add", (req: Request, res: Response) => {
-  let nameReceipe = req.body.nameReceipe;
+  const nameReceipe = req.body.nameReceipe;
   const recipe = new ReceipeModel({
     _id: new mongoose.Types.ObjectId(),
     nameReceipe: nameReceipe,
@@ -19,7 +19,7 @@ router.post("/api/diet/add", (req: Request, res: Response) => {
   recipe
     .save()
     .then((result) => {
-      console.log("yummy it's delecious");
+      console.log("yummy " + result.nameReceipe + "'s delecious");
       res.json("new recipe is added successfully");
     })
     .catch((error) => {

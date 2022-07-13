@@ -17,7 +17,7 @@ router.get("/api/user", async (req: Request, res: Response) => {
 
 // add user
 router.post("/api/user/add", (req: Request, res: Response) => {
-  let { name, img, email, weight, height, imc } = req.body;
+  const { name, img, email, weight, height, imc } = req.body;
   const recipe = new UserModel({
     _id: new mongoose.Types.ObjectId(),
     name,

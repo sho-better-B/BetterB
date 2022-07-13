@@ -15,9 +15,9 @@ router.get("/workout", async (req: Request, res: Response) => {
 
 //post
 router.post("/workout", async (req: Request, res: Response) => {
-  let exercise = req.body.exercise;
-  let description = req.body.description;
-  let gif = req.body.gif;
+  const exercise = req.body.exercise;
+  const description = req.body.description;
+  const gif = req.body.gif;
   const workout = new WorkoutModel({
     _id: new mongoose.Types.ObjectId(),
     exercise: exercise,

@@ -5,7 +5,6 @@ import cors from "cors";
 const app = express()
 const Port= 2000 
  //import diet schema and router
- import { dietRouter } from "./Router/diets";
 app.use(cors());
 
 app.use(json());

@@ -18,19 +18,34 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
-  {
-    path: "/signIn",
-    name: "signIn",
-
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/SignIn.vue"),
-  },
 
   {
     path: "/workout",
     name: "workout",
 
     component: () => import("../views/workoutView.vue"),
+  },
+
+  {
+    path: "/diet",
+    name: "diet",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/dietView.vue"),
+  },
+  {
+    path: "/blogs",
+    name: "blogs",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/blogsView.vue"),
+  },
+  {
+    path: "/signIn",
+    name: "signIn",
+
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/SignIn.vue"),
   },
 ];
 

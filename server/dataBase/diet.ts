@@ -12,3 +12,4 @@ const ReceipeSchema = new Schema<IReceipe>({
     }
   });
   export const ReceipeModel = model<IReceipe>("receipes", ReceipeSchema);
+  export {IReceipe}

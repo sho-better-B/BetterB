@@ -6,7 +6,7 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/workout">workout</router-link>|
       <router-link to="/diet">Diet</router-link>|
-      <router-link to="'/blogs'">Blogs</router-link> |
+      <router-link to="/blogs">Blogs</router-link> |
       <router-link to="/signIn">sign In</router-link>
     </nav>
     <router-view />
@@ -14,9 +14,7 @@
 </template>
 
 <style>
-.nav {
-  /* margin-left: 420px;; */
-}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

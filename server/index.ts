@@ -1,12 +1,12 @@
 import  express  from "express";
 import {json} from 'body-parser'
 import mongoose from "mongoose";
+import cors from "cors";
 const app = express()
 const Port= 2000 
  //import diet schema and router
  import { dietRouter } from "./Router/diets";
- import {ReceipeModel} from "./dataBase/diet"
-
+app.use(cors());
 app.use(json());
 app.use(dietRouter)
 

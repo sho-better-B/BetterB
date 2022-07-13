@@ -5,7 +5,7 @@ import { Schema, model, connect } from "mongoose";
 interface user {
   name: string;
   img: string;
-  // email: string;
+  email: string;
   weight: number;
   height: number;
   imc: number;

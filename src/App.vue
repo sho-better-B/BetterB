@@ -2,10 +2,11 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> | 
-            <router-link to="/workout">workout</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/workout">workout</router-link> |
+      <router-link to="/signIn">sign In</router-link>
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -20,6 +21,7 @@
 
 nav {
   padding: 30px;
+  background-color: rgb(18, 129, 114);
 }
 
 nav a {

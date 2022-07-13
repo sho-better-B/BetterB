@@ -1,33 +1,24 @@
 import  express  from "express";
-const userProfile  = require('./dataBase/user');
-import { connect } from "mongoose";
-
+import {json} from 'body-parser'
+import mongoose from "mongoose";
 const app = express()
 const Port= 2000 
-app.use(express.json());
+ //import diet schema and router
+ import { dietRouter } from "./Router/diets";
+ import {ReceipeModel} from "./dataBase/diet"
+
+app.use(json());
+app.use(dietRouter)
 
 
 app.get("/", (req, res) =>{
     res.send("te5dem")
 })
 
-//test mongo db
-async function run (){
-    await connect('mongodb://localhost:27017/betterB')
-    const houssem = new userProfile({
-        name: 'houssem',
-        img:"test.jpg",
-        email: 'houssem@gmail.com',
-        weight: 100,
-        height: 1.78,
-
-
-
-    });
-    await houssem.save();
-    console.log("te5dem");
-}
-run().catch(err => console.log(err))
+//connect to database
+mongoose.connect('mongodb://localhost:27017/betterB',()=>{
+   console.log("Connected to database...")
+})
 
 app.listen(Port,() => {
     console.log("server connected successfully on port " +Port);

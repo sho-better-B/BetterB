@@ -8,6 +8,8 @@ router.get('/api/diet', async (req: Request, res: Response) => {
   const recipes = await ReceipeModel.find({})
   return res.send(recipes)
 })
+
+
 //add recipes
 router.post('/api/diet/add', (req: Request, res: Response)  => {
   let nameReceipe=req.body.nameReceipe

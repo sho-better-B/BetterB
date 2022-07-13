@@ -1,15 +1,22 @@
 <template>
   <div id="app">
-    <nav>
+    <nav class="nav">
+      <h1>Better-B</h1>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> | 
-            <router-link to="/workout">workout</router-link>
+      <router-link to="/workout">workout</router-link>|
+      <router-link to="/diet">Diet</router-link>|
+      <router-link to="'/blogs'">Blogs</router-link>
     </nav>
     <router-view/>
   </div>
 </template>
 
 <style>
+
+.nav{
+  /* margin-left: 420px;; */
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

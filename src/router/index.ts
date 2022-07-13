@@ -22,6 +22,18 @@ const routes: Array<RouteConfig> = [
     name: 'workout',
     
    component: () => import(/* webpackChunkName: "about" */ '../views/workoutView.vue')
+  },
+  {
+    path: '/diet',
+    name: 'diet',
+    
+   component: () => import(/* webpackChunkName: "about" */ '../views/dietView.vue') 
+  },
+  {
+    path: '/blogs',
+    name: 'blogs',
+    
+   component: () => import(/* webpackChunkName: "about" */ '../views/blogsView.vue') 
   }
 ]
 

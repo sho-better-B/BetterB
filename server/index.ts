@@ -1,6 +1,7 @@
-import  express  from "express";
-import {json} from 'body-parser'
+import express from "express";
+import { json } from "body-parser";
 import mongoose from "mongoose";
+
 const app = express()
 const Port= 2000 
 
@@ -31,7 +32,10 @@ app.post("/workout/post",(req,res)=>{
 })
 
 
-//sign
+// user
+app.use(userRouter);
+
+
 
 
 //connect to database
@@ -40,6 +44,10 @@ mongoose.connect('mongodb://localhost:27017/betterB',
    console.log("Connected to database...")
 })
 
-app.listen(Port,() => {
-    console.log("server connected successfully on port " +Port);
-})
+
+
+
+
+app.listen(Port, () => {
+  console.log("server connected successfully on port " + Port);
+});

@@ -1,5 +1,5 @@
-import  express  from "express";
-import {json} from 'body-parser'
+import express from "express";
+import { json } from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 const app = express()
@@ -7,19 +7,34 @@ const Port= 2000
  //import diet schema and router
  import { dietRouter } from "./Router/diets";
 app.use(cors());
+
 app.use(json());
-app.use(dietRouter)
 
+//diet
+//import diet schema and router
+import { dietRouter } from "./Router/diets";
 
-app.get("/", (req, res) =>{
-    res.send("te5dem")
-})
+app.use(dietRouter);
+
+//workout
+import { workoutRouter } from "./Router/workout";
+
+app.use(workoutRouter);
+
+// user
+import { userRouter } from "./Router/user";
+
+app.use(userRouter);
 
 //connect to database
-mongoose.connect('mongodb://localhost:27017/betterB',()=>{
-   console.log("Connected to database...")
-})
+app.get("/", (req, res) => {
+  res.send("te5dem");
+});
 
-app.listen(Port,() => {
-    console.log("server connected successfully on port " +Port);
-})
+mongoose.connect("mongodb://localhost:27017/betterB", () => {
+  console.log("Connected to database...");
+});
+
+app.listen(Port, () => {
+  console.log("server connected successfully on port " + Port);
+});

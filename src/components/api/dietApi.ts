@@ -12,4 +12,9 @@ export class recipesApi {
 const resp =axios.post<IDiet>(url,{nameReceipe:name})
   return resp
  }
+ static async deleterecepies(id:string){
+  const url = "http://localhost:2000/api/diet/delete";
+  const resp = axios.delete(url,{data:{_id:id}});
+  return resp
+ }
 }

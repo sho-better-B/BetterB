@@ -5,6 +5,7 @@
 <div  :key="index" v-for="( item ,index) in recipes">
 <h3> recipe{{index}}</h3>
   {{item.nameReceipe }}
+  <button @click="deleteData(item._id)">delete</button>
 </div>
 <button @click="addRecipe()">Add recipe</button>
 <div>
@@ -26,15 +27,18 @@ Vue.use(Vuetify);
 export default class Diet extends Vue {
   recipes : IDiet[] = [];
   name="";
- 
     async mounted() {
     this.recipes = await recipesApi.getAllrecipes();
+    console.log(this.recipes)
   }
  
   async addRecipe(){
    return recipesApi.addrecipes(this.name)
   }
- 
+  async deleteData(id:string){
+return recipesApi.deleterecepies(id)
+  }
+
 }
 </script>
 

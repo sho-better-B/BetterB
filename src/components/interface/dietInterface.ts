@@ -1,5 +1,5 @@
 export default interface IDiet{
-    id:string;
+    _id:string;
     nameReceipe:string;
     
 }

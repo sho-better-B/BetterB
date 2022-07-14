@@ -17,11 +17,23 @@ import { dietRouter } from "./Router/diets";
 
 app.use(dietRouter);
 
-//workout
-import { workoutRouter } from "./Router/workout";
 
-app.use(workoutRouter);
+//push
+import { pushRouter } from "./Router/push";
 
+app.use(pushRouter);
+//pull
+import { pullRouter } from "./Router/pull";
+
+app.use(pullRouter);
+//legs
+import { legsRouter } from "./Router/legs";
+
+app.use(legsRouter);
+//core
+import { coreRouter } from "./Router/core";
+
+app.use(coreRouter);
 // user
 import { userRouter } from "./Router/user";
 

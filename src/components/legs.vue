@@ -2,12 +2,12 @@
   <v-layout>
     <v-flex>
       <v-list>
-        <v-list-item :key="index" v-for="(workout, index) in workouts">
+        <v-list-item :key="index" v-for="(legs, index) in legss">
           <div>
             <br>
-            <h1>{{ workout.exercise }}</h1><br>
-            <img :src="workout.gif" alt="">
-            <h3>{{ workout.description }}</h3><br>
+            <h1>{{ legs.exercise }}</h1><br>
+            <img :src="legs.gif" alt="">
+            <h3>{{ legs.description }}</h3><br>
           </div>
         </v-list-item>
       </v-list>
@@ -17,23 +17,26 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { workoutsApi } from "@/components/api/apiWorkout";
-import Works from "@/components/interface/interfaceWorkout";
+import { legssApi } from "@/components/api/apiLegs";
+import Legss from "@/components/interface/interfaceLegs";
 @Component
-export default class Workout extends Vue {
-  workouts: Works[] = [];
+export default class Legs extends Vue {
+  legss: Legss[] = [];
 
   async mounted(): Promise<void> {
-    this.workouts = await workoutsApi.getAllworkouts();
+    this.legss = await legssApi.getAlllegss();
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+div{
+    margin-top: 20px;
+}
 h1{
   text-align: center;
-  color: rgb(0, 204, 255);
+  color: rgb(255, 234, 0);
   font-family: 'Tahoma';
 }
 h3{
@@ -54,6 +57,6 @@ div{
   float: center;
   margin-left: 10%;
   margin-right: 10%;
-  background-color: rgb(246, 246, 246);
+  background-color: rgb(113, 113, 113);
 }
 </style>

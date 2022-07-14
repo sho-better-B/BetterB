@@ -1,12 +1,12 @@
 <template>
- <v-layout>
+  <v-layout>
     <v-flex>
       <v-list>
         <v-list-item :key="index" v-for="(workout, index) in workouts">
-         <div>
-          {{workout.exercise}}
-          {{workout.description}}
-          {{workout.gif}}
+          <div>
+            {{ workout.exercise }}
+            {{ workout.description }}
+            {{ workout.gif }}
           </div>
         </v-list-item>
       </v-list>
@@ -16,18 +16,15 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import {workoutsApi }from "@/components/apiWorkout"
-import Works from "@/components/interfaceWorkout"
+import { workoutsApi } from "@/components/api/apiWorkout";
+import Works from "@/components/interface/interfaceWorkout";
 @Component
 export default class Workout extends Vue {
+  workouts: Works[] = [];
 
- workouts: Works[] = [];
-
- async mounted(): Promise<void> {
+  async mounted(): Promise<void> {
     this.workouts = await workoutsApi.getAllworkouts();
-   
   }
-
 }
 </script>
 

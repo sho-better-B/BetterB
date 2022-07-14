@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { WorkoutModel } from "../dataBase/workout";
+import { PushModel } from "../dataBase/push";
 import mongoose from "mongoose";
 
 // const client = new MongoClient("mongodb://localhost:27017/betterB");
@@ -8,23 +8,23 @@ import mongoose from "mongoose";
 const router = express.Router();
 
 //get
-router.get("/workout", async (req: Request, res: Response) => {
-  const recipes = await WorkoutModel.find({});
-  return res.status(200).send(recipes);
+router.get("/push", async (req: Request, res: Response) => {
+  const pushs = await PushModel.find({});
+  return res.status(200).send(pushs);
 });
 
 //post
-router.post("/workout", async (req: Request, res: Response) => {
+router.post("/push", async (req: Request, res: Response) => {
   const exercise = req.body.exercise;
   const description = req.body.description;
   const gif = req.body.gif;
-  const workout = new WorkoutModel({
+  const push = new PushModel({
     _id: new mongoose.Types.ObjectId(),
     exercise: exercise,
     description: description,
     gif: gif,
   });
-  workout
+  push
     .save()
     .then((result) => {
       console.log("ya33");
@@ -37,9 +37,9 @@ router.post("/workout", async (req: Request, res: Response) => {
 });
 
 //delete
-router.delete("/workout", (req: Request, res: Response) => {
+router.delete("/push", (req: Request, res: Response) => {
   const id = req.body._id;
-  WorkoutModel.findByIdAndDelete(id)
+  PushModel.findByIdAndDelete(id)
     .then((result) => {
       console.log("bara zamer");
       res.json(result);
@@ -50,12 +50,12 @@ router.delete("/workout", (req: Request, res: Response) => {
 });
 
 //update
-router.put("/workout", (req: Request, res: Response) => {
+router.put("/push", (req: Request, res: Response) => {
   const id = req.body._id;
   const exercise = req.body.exercise;
   const description = req.body.description;
   const gif = req.body.gif;
-  WorkoutModel.updateOne(
+  PushModel.updateOne(
     { _id: id },
     {
       $set: {
@@ -74,4 +74,4 @@ router.put("/workout", (req: Request, res: Response) => {
     });
 });
 
-export { router as workoutRouter };
+export { router as pushRouter };

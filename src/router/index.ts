@@ -16,14 +16,6 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import( "../views/AboutView.vue"),
   },
-
-  {
-    path: "/workout",
-    name: "workout",
-
-    component: () => import("../views/workoutView.vue"),
-  },
-
   {
     path: "/diet",
     name: "diet",
@@ -45,6 +37,42 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import( "../views/SignIn.vue"),
   },
+  {
+    path: "/training",
+    name: "training",
+
+    component: () =>
+      import( "../views/Training.vue"), 
+  },
+  {
+    path: "/push",
+    name: "push",
+
+    component: () =>
+      import( "../views/Push.vue"), 
+  },
+  {
+    path: "/pull",
+    name: "pull",
+
+    component: () =>
+      import( "../views/Pull.vue"), 
+  },
+  {
+    path: "/legs",
+    name: "legs",
+
+    component: () =>
+      import( "../views/Legs.vue"), 
+  }
+  ,
+  {
+    path: "/core",
+    name: "core",
+
+    component: () =>
+      import( "../views/Core.vue"), 
+  }
 ];
 
 const router = new VueRouter({

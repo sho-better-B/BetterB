@@ -4,7 +4,7 @@
       <h1>Better-B</h1>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/workout">workout</router-link>|
+      <router-link to="/training">Training</router-link>|
       <router-link to="/diet">Diet</router-link>|
       <router-link to="/blogs">Blogs</router-link> |
       <router-link to="/signIn">sign In</router-link>
@@ -26,7 +26,7 @@ export default defineComponent({
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #384552;
 }
 
 nav {

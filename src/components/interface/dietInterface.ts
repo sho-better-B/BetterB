@@ -1,5 +1,4 @@
-export default interface IDiet{
-    id:string;
-    nameReceipe:string;
-    
+export default interface IDiet {
+  _id: string;
+  nameReceipe: string;
 }

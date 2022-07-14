@@ -3,14 +3,3 @@ export default interface IDiet{
     nameReceipe:string;
     
 }
-export class recipeDTO implements IDiet{
-    id= "";
-    nameReceipe="";
-  
-  }
-export default class Diets extends recipeDTO {
-    constructor(dto: recipeDTO){
-      super();
-      Object.assign(this, dto);
-    }
-}

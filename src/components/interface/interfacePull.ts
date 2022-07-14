@@ -1,17 +1,17 @@
-export default interface IWork{
+export default interface IPull{
     id:string;
     exercise:string;
     description:string;
     gif:string;
 }
-export class workDTO implements IWork{
+export class pullDTO implements IPull{
     id="";
     exercise="";
     description="";
     gif="";
   }
-export default class Works extends workDTO {
-    constructor(dto: workDTO){
+export default class Pulls extends pullDTO {
+    constructor(dto: pullDTO){
       super();
       Object.assign(this, dto);
     }

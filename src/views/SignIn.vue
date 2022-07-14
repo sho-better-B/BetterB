@@ -1,27 +1,32 @@
 <template>
   <div class="SignIn">
     <br />
-    <form action="submit">
+    <form>
       <h3>Welcome {{ message }} in Better-B</h3>
 
       <div>
         <label for="username">name : </label>
         <input
           type="text"
-          v-model="message"
+          v-model="name"
           name="username"
           placeholder="Username"
         />
       </div>
       <div>
         <label for="Image">Image : </label>
-        <input type="text" name="img" placeholder="Image link" />
+        <input v-model="img" type="text" name="img" placeholder="Image link" />
         <br />
-        <input type="file" name="" id="" />
+        <!-- <input type="file" name="" id="" /> -->
       </div>
       <div>
         <label for="mail">email : </label>
-        <input type="email" name="email" placeholder="Email Address" />
+        <input
+          v-model="email"
+          type="email"
+          name="email"
+          placeholder="Email Address"
+        />
       </div>
       <div>
         <label for="weight ">weight : </label>
@@ -46,12 +51,12 @@
       <div>
         <button @click="changeIMC">calculate your IMC</button>
 
-        <h4>your Imc is : {{ calcIMC(height, weight) }}</h4>
+        <h4>your Imc is : {{ IMC }}</h4>
       </div>
 
       <!-- <input type="password" name="password" placeholder="Password"  /> -->
 
-      <button type="submit">Signin</button>
+      <button @click="calcIMC(height, weight), addUser()">Signin</button>
     </form>
 
     <!-- get all user testing -->
@@ -61,7 +66,7 @@
         <v-list>
           <h3>test</h3>
           <v-list-item :key="index" v-for="(user, index) in users">
-            <div>{{ user.name }} , {{ user.email }}</div>
+            <div>{{ user.name }} , {{ user.email }} , {{ user.imc }}</div>
           </v-list-item>
         </v-list>
       </v-flex>
@@ -81,26 +86,29 @@ Vue.use(Vuetify);
 export default class User extends Vue {
   users: Users[] = [];
   message = "";
-  IMC = 0;
-  weight = null;
-  height = null;
+  name = "";
+  img = "";
+  email = "";
+  weight = 0;
+  height = 0;
   test = true;
+  IMC = 0;
+
   async mounted(): Promise<void> {
     this.users = await userApi.getAllusers();
   }
+
   calcIMC(height: number, weight: number) {
-    if (this.test === false) {
-      this.IMC = weight / (height * height);
-      // return (this.IMC = (weight / (height * height)).toFixed(2));
-      if (this.IMC < 18.5) {
-        return " Underweight " + this.IMC;
-      } else if (this.IMC < 25) {
-        return " normal " + this.IMC;
-      } else if (this.IMC < 35) {
-        return " Overweight " + this.IMC;
-      } else {
-        return " Obesity " + this.IMC;
-      }
+    this.IMC = Number((weight / (height * height)).toFixed(2));
+    console.log(this.IMC);
+    if (this.IMC < 18.5) {
+      return " Underweight " + this.IMC;
+    } else if (this.IMC < 25) {
+      return " normal " + this.IMC;
+    } else if (this.IMC < 35) {
+      return " Overweight " + this.IMC;
+    } else {
+      return " Obesity " + this.IMC;
     }
   }
 
@@ -111,6 +119,17 @@ export default class User extends Vue {
       return (this.test = false);
     }
   }
+  async addUser() {
+    return userApi.adduser(
+      this.name,
+      this.img,
+      this.email,
+      this.weight,
+      this.height,
+      this.IMC
+    );
+  }
+
   // data() {
   //   return {
   //     message: "",

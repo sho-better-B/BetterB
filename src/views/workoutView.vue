@@ -18,3 +18,8 @@ import Workout from "@/components/workout.vue";
 })
 export default class workoutView extends Vue {}
 </script>
+<style>
+h1{
+  font-family: 'Tahoma';
+}
+</style>

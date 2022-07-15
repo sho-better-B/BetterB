@@ -7,9 +7,10 @@ export class recipesApi {
     const response = await axios.get(url);
     return response.data;
   }
- static async addrecipes(name:string){
+ static async addrecipes(name:string,image:string,description:string){
   const url = "http://localhost:2000/api/diet/add";
-const resp =axios.post<IDiet>(url,{nameReceipe:name})
+const resp =axios.post<IDiet>(url,{nameReceipe:name,
+  image:image,description:description})
   return resp
  }
  static async deleterecepies(id:string){

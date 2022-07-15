@@ -11,4 +11,9 @@ export abstract class pullsApi {
 
     return response.data;
   }
+  static async addpulls(exercise:string,description:string,gif:string){
+    const url = "http://localhost:2000/pull";
+  const resp =axios.post<IPull>(url,{exercise:exercise,description:description,gif:gif})
+    return resp
+   }
 }

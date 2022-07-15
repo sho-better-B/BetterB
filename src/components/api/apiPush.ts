@@ -11,4 +11,9 @@ export abstract class pushsApi {
 
     return response.data;
   }
+  static async addpushs(exercise:string,description:string,gif:string){
+    const url = "http://localhost:2000/push";
+  const resp =axios.post<IPush>(url,{exercise:exercise,description:description,gif:gif})
+    return resp
+   }
 }

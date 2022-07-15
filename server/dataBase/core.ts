@@ -21,3 +21,4 @@ const CoreSchema = new Schema<ICore>({
   },
 });
 export const CoreModel = model<ICore>("cores", CoreSchema);
+export{ICore}

@@ -1,6 +1,6 @@
 <template>
   <div class="x">
-    <nav id="x"> 
+    <nav> 
       <router-link to="/push">Push Dumbbell</router-link>   |
       <router-link to="/pull">Pull Dumbbell</router-link>  |
       <router-link to="/legs">Legs Dumbbell</router-link>    |
@@ -28,7 +28,7 @@ export default class coreView extends Vue {}
 h1{
   font-family: 'Tahoma';
 }
-#x {
+nav {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -38,20 +38,20 @@ h1{
   color: #2c3e50;
 }
 
-#x {
+nav {
   padding: 30px;
   background-color: rgb(60, 90, 86);
   margin-top: 20px;
   margin-left: 50px;
   margin-right: 50px;
 }
-#x a {
+nav a {
   font-weight: bold;
   color: #2c3e50;
 }
 
 
-#x a.router-link-exact-active {
+nav a.router-link-exact-active {
   color: #42b983;
 }
-</style>
+</style>  -->

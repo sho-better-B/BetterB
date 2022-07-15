@@ -1,38 +1,98 @@
 <template>
-  <v-layout>
+
     <v-flex>
-      <v-list>
-        <v-list-item :key="index" v-for="(core, index) in cores">
+        <v-list-item :key="index" v-for="(item, index) in cores">
           <div>
             <br>
-            <div>
-            <h1>{{ core.exercise }}</h1><br>
-            </div>
-            <img :src="core.gif" alt="" >
-            <h3>{{ core.description }}</h3><br>
+            <h1>{{ item.exercise }}</h1><br>
+            <img :src="item.gif" alt="">
+            <h3 id="descri">{{ item.description }}</h3><br>
+
           </div>
         </v-list-item>
-      </v-list>
+        <div>
+          <button @click="addCores()">Add core exercise</button>
+          <div>
+    <input v-model="exercise" placeholder="Exercise">
+    <input v-model="gif" placeholder="GIF or IMG">
+    <input v-model="description" placeholder="Description">
+          </div>
+        </div>
     </v-flex>
-  </v-layout>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { coresApi } from "@/components/api/apiCore";
-import Works from "@/components/interface/interfaceCore";
+import ICore from "@/components/interface/interfaceCore";
+// import IWork from "@/components/interface/interfaceCore";
+
+import Vuetify from "vuetify";
+Vue.use(Vuetify);
 @Component
 export default class Core extends Vue {
-  cores: Works[] = [];
+  cores: ICore[] = [];;
+  exercise="";
+  gif="";
+  description="";
 
   async mounted(): Promise<void> {
     this.cores = await coresApi.getAllcores();
   }
+   async addCores(){
+   return coresApi.addcores(this.exercise,this.gif,this.description)
+  }
+
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+button{
+  
+                    display: inline-block;
+                    outline: 0;
+                    text-align: center;
+                    cursor: pointer;
+                    padding: 0px 16px;
+                    border-radius: 2px;
+                    min-width: 80px;
+                    height: 32px;
+                    background-color: rgb(0, 120, 212);
+                    color: rgb(255, 255, 255);
+                    font-size: 14px;
+                    font-weight: 400;
+                    box-sizing: border-box;
+                    border: 1px solid rgb(0, 120, 212);            
+}
+button:hover {
+                        background-color: rgb(16, 110, 190);
+                        border: 1px solid rgb(16, 110, 190);
+                    }
+input{
+  
+                    background-color: rgb(250, 251, 252);
+                    border-color: rgb(223, 225, 230);
+                    color: rgb(9, 30, 66);
+                    cursor: text;
+                    border-radius: 3px;
+                    border-width: 2px;
+                    border-style: solid;
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+                    line-height: 1.42857; 
+                    padding: 8px 6px;
+                    height: 36px; 
+                    margin-right: 10px;   
+}
+input:hover{
+                        background-color: rgb(235, 236, 240);
+                    }
+input:focus{
+                        background-color: rgb(255, 255, 255);
+                        border-color: rgb(76, 154, 255);
+                    }
 div{
     margin-top: 20px;
 }
@@ -40,25 +100,22 @@ h1{
   text-align: center;
   color: rgb(255, 234, 0);
   font-family: 'Tahoma';
-}
-h3{
+} 
+#descri{
   text-align: center;
-  margin-left: 202px;
-  margin-right: 202px;
+  margin-left: 180px;
+  margin-right: 180px;
   padding-left:80px;
   padding-right: 80px;
-  color: black;
-    font-family: 'Tahoma';
 
 }
-img{
+ img{
   width: 19%;
   height: 15%;
 }
 div{
   float: center;
-  margin-left: 10%;
-  margin-right: 10%;
-  background-color: rgb(113, 113, 113);
-}
+  margin-left: 5%;
+  margin-right: 5%;
+} 
 </style>

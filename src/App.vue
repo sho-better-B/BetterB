@@ -2,13 +2,22 @@
   <div id="app">
     <nav class="nav">
       <h1>Better-B</h1>
-      <router-link to="/" ><h1> Home</h1></router-link> 
-      <router-link to="/about" ><h1>About</h1></router-link> 
-      <router-link to="/training" ><h1>Training</h1></router-link>
-      <router-link to="/diet" ><h1>Diet</h1></router-link>
-      <router-link to="/blogs" ><h1>Blogs</h1></router-link> 
-      <router-link to="/signIn" ><h1>sign In</h1></router-link>
+      <br />
+      <router-link to="/"><h1>Home</h1></router-link>
+      <router-link to="/about"><h1>About</h1></router-link>
+      <router-link to="/training"><h1>Training</h1></router-link>
+      <router-link to="/diet"><h1>Diet</h1></router-link>
+      <router-link to="/blogs"><h1>Blogs</h1></router-link>
+      <router-link to="/signIn"><h1>Sign In</h1></router-link>
+      <router-link to="/profile"> <h1>Profile</h1> </router-link>
+      <!-- <router-link
+        to="/profileTest"
+        tag="img"
+        src="https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png"
+      >
+      </router-link> -->
     </nav>
+
     <router-view />
   </div>
 </template>
@@ -20,11 +29,11 @@ export default defineComponent({
 </script>
 
 <style>
-body{
-  background-color: #ADB3BC;
+body {
+  background-color: #adb3bc;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
- #app {
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,12 +41,11 @@ body{
   color: #384552;
 }
 
-
 /* nav bar css */
-nav h1{
+nav h1 {
   position: relative;
 
- float:left;
+  float: left;
   color: #f2f2f2;
   padding-left: 10px;
   text-decoration: none;
@@ -47,35 +55,33 @@ nav h1{
   height: 70px;
   padding-top: 30px;
   margin-top: 0;
- 
-
- }
- nav {
+}
+nav {
   position: relative;
 
-margin-bottom: 40px;
+  margin-bottom: 40px;
   overflow: hidden;
-  background-image :linear-gradient(to top, #211b1c 0%, #150f10 52%, #0a0b0e 100%); 
-   width: 100%;
+  background-image: linear-gradient(
+    to top,
+    #211b1c 0%,
+    #150f10 52%,
+    #0a0b0e 100%
+  );
+  width: 100%;
   height: 90px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
- }
- nav h1:hover{
+}
+nav h1:hover {
   position: relative;
 
- text-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-      cursor: pointer;
+  text-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  cursor: pointer;
+}
 
- }
- 
-
- nav :hover{
+nav :hover {
   position: relative;
 
- text-align: center;
-TEXT-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
- 
-
-
- }
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
 </style>

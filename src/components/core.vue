@@ -5,8 +5,10 @@
         <v-list-item :key="index" v-for="(core, index) in cores">
           <div>
             <br>
+            <div>
             <h1>{{ core.exercise }}</h1><br>
-            <img :src="core.gif" alt="">
+            </div>
+            <img :src="core.gif" alt="" >
             <h3>{{ core.description }}</h3><br>
           </div>
         </v-list-item>

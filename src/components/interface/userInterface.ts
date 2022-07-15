@@ -1,20 +1,22 @@
 export default interface IUser {
-  id: string;
+  _id: string;
   name: string;
   img: string;
   email: string;
   weight: number;
   height: number;
   imc: number;
+  description: string;
 }
 export class userDTO implements IUser {
-  id = "";
+  _id = "";
   name = "";
   img = "";
   email = "";
   weight = 0;
   height = 0;
   imc = 0;
+  description = "";
 }
 export default class Users extends userDTO {
   constructor(dto: userDTO) {

@@ -14,6 +14,14 @@ npm install
 npm run serve
 ```
 
+## start the server
+
+cd .\server\
+
+```
+npm run start
+```
+
 ### Compiles and minifies for production
 
 ```

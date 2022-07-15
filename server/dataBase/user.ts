@@ -8,6 +8,7 @@ interface IUser extends Document {
   weight: number;
   height: number;
   imc: number;
+  description: string;
 }
 // 2. Create schema unsing typescript
 const UserSchema = new Schema<IUser>({
@@ -26,6 +27,7 @@ const UserSchema = new Schema<IUser>({
   weight: Number,
   height: Number,
   imc: Number,
+  description: String,
 });
 
 // 3. exports the schema object

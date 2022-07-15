@@ -17,7 +17,7 @@ router.get("/api/user", async (req: Request, res: Response) => {
 
 // add user
 router.post("/api/user/add", (req: Request, res: Response) => {
-  const { name, img, email, weight, height, imc } = req.body;
+  const { name, img, email, weight, height, imc, description } = req.body;
   const recipe = new UserModel({
     _id: new mongoose.Types.ObjectId(),
     name,
@@ -26,6 +26,7 @@ router.post("/api/user/add", (req: Request, res: Response) => {
     weight,
     height,
     imc,
+    description,
   });
   recipe
     .save()
@@ -63,6 +64,7 @@ router.put("/api/user/update", (req: Request, res: Response) => {
   const height = req.body.height;
   const weight = req.body.weight;
   const imc = req.body.imc;
+  const description = req.body.description;
 
   UserModel.updateOne(
     { _id: id },
@@ -74,6 +76,7 @@ router.put("/api/user/update", (req: Request, res: Response) => {
         height: height,
         weight: weight,
         imc: imc,
+        description: description,
       },
     }
   )
@@ -84,6 +87,15 @@ router.put("/api/user/update", (req: Request, res: Response) => {
     .catch((error) => {
       console.log(error);
     });
+});
+
+// get one user // profile user
+
+router.get("/api/user/profile:id", async (req: Request, res: Response) => {
+  const id = req.body._id;
+
+  const user = await UserModel.findOne(id);
+  return res.status(200).json(user);
 });
 
 export { router as userRouter };

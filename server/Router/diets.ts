@@ -12,9 +12,13 @@ router.get("/api/diet", async (req: Request, res: Response) => {
 //add recipes
 router.post("/api/diet/add", (req: Request, res: Response) => {
   const nameReceipe = req.body.nameReceipe;
+  const images = req.body.image;
+  const descriptions = req.body.description;
   const recipe = new ReceipeModel({
     _id: new mongoose.Types.ObjectId(),
     nameReceipe: nameReceipe,
+    image: images,
+    description:descriptions
   });
   recipe
     .save()

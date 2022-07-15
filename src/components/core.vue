@@ -7,6 +7,7 @@
             <h1>{{ item.exercise }}</h1><br>
             <img :src="item.gif" alt="">
             <h3 id="descri">{{ item.description }}</h3><br>
+
           </div>
         </v-list-item>
         <div>

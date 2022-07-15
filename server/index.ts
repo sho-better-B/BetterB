@@ -34,10 +34,14 @@ app.use(legsRouter);
 import { coreRouter } from "./Router/core";
 
 app.use(coreRouter);
-// user
+// // user
 import { userRouter } from "./Router/user";
 
 app.use(userRouter);
+//signup
+import { signupRouter } from "./Router/signup";
+
+app.use(signupRouter);
 
 //connect to database
 app.get("/", (req, res) => {

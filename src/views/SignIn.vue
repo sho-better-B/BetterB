@@ -1,44 +1,52 @@
 <template>
   <div class="SignIn">
     <br />
+    <h3>Welcome {{ name }} in Better-B</h3>
+    <br />
     <form>
-      <h3>Welcome {{ message }} in Better-B</h3>
-
-      <div>
-        <label for="name">name : </label>
-        <input type="text" v-model="name" name="name" placeholder="name" />
+      <div class="form-group">
+        <input
+          type="text"
+          v-model="name"
+          name="name"
+          placeholder="name"
+          class="form-control inputs"
+        />
       </div>
       <div>
-        <label for="Image">Image : </label>
-        <input v-model="img" type="text" name="img" placeholder="Image link" />
-        <br />
-      </div>
-      <div>
-        <label for="mail">email : </label>
         <input
           v-model="email"
           type="email"
           name="email"
           placeholder="Email Address"
+          class="form-control inputs"
         />
       </div>
       <div>
-        <label for="weight ">weight : </label>
-
+        <input
+          class="form-control inputs"
+          v-model="img"
+          type="text"
+          name="img"
+          placeholder="Image link"
+        />
+        <br />
+      </div>
+      <div>
         <input
           v-model="weight"
           type="text"
           name="weigth"
+          class="form-control inputs"
           placeholder="weigth on KG"
         />
       </div>
       <div>
-        <label for="height">height : </label>
-
         <input
           v-model="height"
           type="text"
           name="height"
+          class="form-control inputs"
           placeholder="height on Metre"
         />
       </div>
@@ -75,7 +83,7 @@
                   height="{200}"
                 />
                 <p>you size is {{ user.description }}</p>
-                <button @click="deleteData(user._id)">delete</button>
+                <button @click="deleteData(user._id)">delete user</button>
               </div>
             </v-list-item>
           </v-list>
@@ -104,7 +112,6 @@ Vue.use(Vuetify);
 @Component
 export default class User extends Vue {
   users: Users[] = [];
-  message = "";
   name = "";
   img = "";
   email = "";
@@ -188,5 +195,13 @@ export default class User extends Vue {
 .userImg {
   width: 200;
   height: 200;
+}
+.SignIn {
+  width: 20%;
+  text-align: center;
+  margin: auto;
+}
+.inputs {
+  margin-bottom: 5px;
 }
 </style>

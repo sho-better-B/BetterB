@@ -9,13 +9,14 @@
       <router-link to="/diet"><h1>Diet</h1></router-link>
       <router-link to="/blogs"><h1>Blogs</h1></router-link>
       <router-link to="/signIn"><h1>Sign In</h1></router-link>
-      <router-link to="/profile"> <h1>Profile</h1> </router-link>
-      <!-- <router-link
-        to="/profileTest"
-        tag="img"
-        src="https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png"
-      >
-      </router-link> -->
+      <router-link to="/signUp"><h1>Sign Up</h1></router-link>
+
+      <router-link to="/profile">
+        <img
+          src="https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png"
+          alt=""
+        />
+      </router-link>
     </nav>
 
     <router-view />
@@ -83,5 +84,11 @@ nav :hover {
 
   text-align: center;
   text-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+img {
+  position: relative;
+  margin-top: 20%;
+  width: 70px;
+  height: 70px;
 }
 </style>

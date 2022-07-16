@@ -16,4 +16,9 @@ export abstract class legssApi {
   const resp =axios.post<ILegs>(url,{exercise:exercise,description:description,gif:gif})
     return resp
    }
+   static async deletelegss(id:string){
+    const url = "http://localhost:2000/legs";
+    const resp = axios.delete(url,{data:{_id:id}});
+    return resp
+   }
 }

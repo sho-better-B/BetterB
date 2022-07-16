@@ -62,4 +62,61 @@ export default defineComponent({
 
 <style>
 
+body{
+  background-color: #f5f5f5;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+ #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #384552;
+}
+
+
+/* nav bar css */
+nav h1{
+  position: relative;
+
+ float:left;
+  color: #f2f2f2;
+  padding-left: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  padding-right: 100px;
+  text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  height: 70px;
+  padding-top: 30px;
+  margin-top: 0;
+ 
+
+ }
+ nav {
+  position: relative;
+
+margin-bottom: 40px;
+  overflow: hidden;
+  background-image :linear-gradient(to top, #211b1c 0%, #150f10 52%, #0a0b0e 100%); 
+   width: 100%;
+  height: 90px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+ }
+ nav h1:hover{
+  position: relative;
+
+ text-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+      cursor: pointer;
+
+ }
+ 
+
+ nav :hover{
+  position: relative;
+
+ text-align: center;
+TEXT-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+ 
+
+
 </style>

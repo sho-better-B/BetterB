@@ -43,7 +43,6 @@ router.delete("/api/diet/delete", (req: Request, res: Response) => {
       console.log(error);
     });
 });
-export { router as dietRouter };
 //update recipe
 router.put("/api/diet/update", (req: Request, res: Response) => {
   const id = req.body._id;
@@ -64,3 +63,4 @@ router.put("/api/diet/update", (req: Request, res: Response) => {
       console.log(error);
     });
 });
+export { router as dietRouter };

@@ -30,7 +30,7 @@ export default defineComponent({
 
 <style>
 body {
-  background-color: #adb3bc;
+  background-color: #f5f5f5;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 #app {

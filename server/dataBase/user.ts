@@ -5,6 +5,7 @@ interface IUser extends Document {
   name: string;
   img: string;
   email: string;
+  password: string;
   weight: number;
   height: number;
   imc: number;
@@ -21,6 +22,10 @@ const UserSchema = new Schema<IUser>({
     required: true,
   },
   email: {
+    type: String,
+    required: true,
+  },
+  password:{
     type: String,
     required: true,
   },

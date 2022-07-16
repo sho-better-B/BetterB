@@ -16,4 +16,9 @@ export abstract class pullsApi {
   const resp =axios.post<IPull>(url,{exercise:exercise,description:description,gif:gif})
     return resp
    }
+   static async deletepulls(id:string){
+    const url = "http://localhost:2000/pull";
+    const resp = axios.delete(url,{data:{_id:id}});
+    return resp
+   }
 }

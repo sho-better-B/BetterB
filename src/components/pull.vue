@@ -7,15 +7,14 @@
             <h1>{{ item.exercise }}</h1><br>
             <img :src="item.gif" alt="">
             <h3 id="descri">{{ item.description }}</h3><br>
+            <button id="delete" @click="deleteData(item._id) ">delete</button>
           </div>
         </v-list-item>
         <div>
-          <button @click="addpulls()">Add pull exercise</button>
-          <div>
+          <button @click="addpulls()">ADD NEW ONE</button>
     <input v-model="exercise" placeholder="Exercise">
     <input v-model="gif" placeholder="GIF or IMG">
     <input v-model="description" placeholder="Description">
-          </div>
         </div>
     </v-flex>
 </template>
@@ -34,32 +33,67 @@ export default class Pull extends Vue {
        async addpulls(){
    return pullsApi.addpulls(this.exercise,this.gif,this.description)
   }
+    async deleteData(id:string){
+return pullsApi.deletepulls(id)
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+#delete{
+  
+                display: inline-block;
+                outline: 0;
+                text-align: center;
+                cursor: pointer;
+                height: 34px;
+                padding: 0 13px;
+                color: #fff;
+                vertical-align: top;
+                border-radius: 3px;
+                border: 1px solid transparent;
+                transition: all .3s ease;
+                background: #ff0808;
+                border-color: #cc4d29;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 16px;
+                font-size: 11px;    
+                margin: auto;
+}
+#delete:hover {
+                    background: #e4461b;
+                    border-color: #e4461b;
+                }
+
 button{
   
-                    display: inline-block;
-                    outline: 0;
-                    text-align: center;
-                    cursor: pointer;
-                    padding: 0px 16px;
-                    border-radius: 2px;
-                    min-width: 80px;
-                    height: 32px;
-                    background-color: rgb(0, 120, 212);
-                    color: rgb(255, 255, 255);
-                    font-size: 14px;
-                    font-weight: 400;
-                    box-sizing: border-box;
-                    border: 1px solid rgb(0, 120, 212);            
+                display: inline-block;
+                outline: 0;
+                text-align: center;
+                cursor: pointer;
+                height: 34px;
+                padding: 0 13px;
+                color: #fff;
+                vertical-align: top;
+                border-radius: 3px;
+                border: 1px solid transparent;
+                transition: all .3s ease;
+                background: #2978cc;
+                border-color: #ffffff;
+                font-weight: 600;
+                text-transform: uppercase;
+                line-height: 16px;
+                font-size: 11px;    
+                margin: auto;
+
 }
 button:hover {
-                        background-color: rgb(16, 110, 190);
-                        border: 1px solid rgb(16, 110, 190);
-                    }
+                    background: #20a5ed;
+                    border-color: #20a5ed;
+                }
 input{
   
                     background-color: rgb(250, 251, 252);
@@ -75,7 +109,9 @@ input{
                     line-height: 1.42857; 
                     padding: 8px 6px;
                     height: 36px; 
-                    margin-right: 10px;   
+                    margin-right: 0px;
+                    margin-bottom: 20px;
+ 
 }
 input:hover{
                         background-color: rgb(235, 236, 240);
@@ -91,9 +127,11 @@ h1{
   text-align: center;
   color: rgb(255, 234, 0);
   font-family: 'Tahoma';
+    margin: auto;
+
 } 
 #descri{
-  text-align: center;
+  text-align: left;
   margin-left: 180px;
   margin-right: 180px;
   padding-left:80px;
@@ -103,8 +141,10 @@ h1{
  img{
   width: 19%;
   height: 15%;
+  margin: auto;
 }
 div{
+  margin: auto;
   float: center;
   margin-left: 5%;
   margin-right: 5%;

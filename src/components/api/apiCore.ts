@@ -16,4 +16,9 @@ export abstract class coresApi {
   const resp =axios.post<ICore>(url,{exercise:exercise,description:description,gif:gif})
     return resp
    }
+   static async deletecores(id:string){
+    const url = "http://localhost:2000/core";
+    const resp = axios.delete(url,{data:{_id:id}});
+    return resp
+   }
 }

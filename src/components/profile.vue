@@ -10,7 +10,7 @@
             width="100"
             class="rounded-circle"
           />
-          <h3 class="mt-2">Name</h3>
+          <h3 class="mt-2">{Name}</h3>
           <span class="mt-1 clearfix">email</span>
 
           <div class="row mt-3 mb-3">

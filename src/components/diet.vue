@@ -84,31 +84,33 @@ template{
   margin-right: 50px;
   margin-left: 100px;
   margin-top: 40px;
-    border-radius: 50px;
-
+    border-radius: 100px;
+border-top-left-radius: 200px;
+border-top-right-radius: 200px;
 }
 .dietBlock:hover{
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .dietImage{
-   width: 300px;
+   width: 400px;
   height: 300px;
 box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-border-top-left-radius: 50px;
-border-top-right-radius: 50px;
+border-top-left-radius: 200px;
+border-top-right-radius: 200px;
 
 
 
 }
 /* delete and recipe name */
 .recipe-name{
-  background-color: antiquewhite;
-   width: 300px;
+  background-color: white;
+   width: 400px;
   height: fit-content;
-  border-radius: 50px;
+  border-radius: 100px;
 box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-
+border-top-left-radius: 200px;
+border-top-right-radius: 200px;
 }
 
 

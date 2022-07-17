@@ -10,14 +10,8 @@
       <router-link to="/signIn" ><h1>sign In</h1></router-link>
       <h2><img
             class="imgs-fluid"
-            src="https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png"
+            src="../src/images/user3.png"
             alt=""
-            style="
-               {
-                height: 10px;
-                width: 10 px;
-              }
-            "
           /></h2>
     </nav>
     <router-view />
@@ -58,12 +52,13 @@ nav h1{
 
  }
  nav  .imgs-fluid{
-   width: 80px;
-  height: 70px;
-  position: relative;
+   width: 100px;
+  height: 80px;
+  position: absolute;
   padding-top: 0;
   margin-top: 0 ;
-  padding-left: 390px;
+  padding-left: 70px;
+  border-radius: 300px;
 }
 nav .titles{
   font-size: 50px;

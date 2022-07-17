@@ -3,6 +3,7 @@ import { UserModel } from "../dataBase/user";
 import mongoose from "mongoose";
 import bcrypt from 'bcrypt';
 import IUser from '../dataBase/user'
+import console from "console";
 
 const router = express.Router();
 // router.post('/api/user/signup', async (req:Request, res:Response) => {
@@ -38,6 +39,7 @@ const router = express.Router();
 // });
 // })
 
+
 router.post('/api/user/login',async (req:Request, res:Response) => {
     try{
 const{ id}= req.body._id;
@@ -50,4 +52,5 @@ console.log(user)
     return res.status(500).json({ message: "Internal Server Error" })
 }
 })
+
 export { router as signupRouter };

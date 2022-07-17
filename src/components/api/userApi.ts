@@ -16,7 +16,8 @@ export abstract class userApi {
     email: string,
     weight: number,
     height: number,
-    IMC: number
+    IMC: number,
+    description: string
   ) {
     const url = "http://localhost:2000/api/user/add";
     const resp = axios.post<IUser>(url, {
@@ -26,7 +27,13 @@ export abstract class userApi {
       weight: weight,
       height: height,
       imc: IMC,
+      description: description,
     });
+    return resp;
+  }
+  static async deleteuser(id: string) {
+    const url = "http://localhost:2000/api/user/delete";
+    const resp = axios.delete(url, { data: { _id: id } });
     return resp;
   }
 }

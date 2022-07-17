@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import { UserModel } from "../dataBase/user";
 import mongoose from "mongoose";
-import bcrypt from 'bcrypt';
+import bcrypt from "bcrypt";
 
 // import { MongoClient } from "mongodb";
 
@@ -40,43 +40,41 @@ router.get("/api/user", async (req: Request, res: Response) => {
 //       res.json(error);
 //     });
 // });
-router.post('/api/user/add', async (req:Request, res:Response) => {
- 
-      const names =req.body.name;
-      const img=req.body.img;
-      const email = req.body.email;
-      const password = req.body.password;
-      const weight=req.body.weight;
-      const height=req.body.height;
-     const   imc=req.body.imc
-      
-// const passwordee =await bcrypt.hash(passwords,salt)
-bcrypt.genSalt(10)
-const salt = await bcrypt.genSalt(10);
-const newpassword = await bcrypt.hash(password, salt);
+router.post("/api/user/add", async (req: Request, res: Response) => {
+  const names = req.body.name;
+  const img = req.body.img;
+  const email = req.body.email;
+  const password = req.body.password;
+  const weight = req.body.weight;
+  const height = req.body.height;
+  const imc = req.body.imc;
 
-const newUser = await new UserModel({
-  _id: new mongoose.Types.ObjectId(),
-  name:names,
-  img:img,
-  email:email,
-  password: newpassword,
-  weight:weight,
-  height:height,
-    imc:imc
- 
-})
-newUser
-.save()
-.then((result) => {
-console.log("user added successfully");
-res.json(result.name + " is added successfully");
-})
-.catch((error) => {
-console.log(error);
-res.json(error);
+  // const passwordee =await bcrypt.hash(passwords,salt)
+  bcrypt.genSalt(10);
+  const salt = await bcrypt.genSalt(10);
+  const newpassword = await bcrypt.hash(password, salt);
+
+  const newUser = await new UserModel({
+    _id: new mongoose.Types.ObjectId(),
+    name: names,
+    img: img,
+    email: email,
+    password: newpassword,
+    weight: weight,
+    height: height,
+    imc: imc,
+  });
+  newUser
+    .save()
+    .then((result) => {
+      console.log("user added successfully");
+      res.json(result.name + " is added successfully");
+    })
+    .catch((error) => {
+      console.log(error);
+      res.json(error);
+    });
 });
-})
 // admin can delete user
 
 router.delete("/api/user/delete", (req: Request, res: Response) => {
@@ -101,6 +99,7 @@ router.put("/api/user/update", (req: Request, res: Response) => {
   const height = req.body.height;
   const weight = req.body.weight;
   const imc = req.body.imc;
+  const description = req.body.description;
 
   UserModel.updateOne(
     { _id: id },
@@ -112,6 +111,7 @@ router.put("/api/user/update", (req: Request, res: Response) => {
         height: height,
         weight: weight,
         imc: imc,
+        description: description,
       },
     }
   )
@@ -122,6 +122,22 @@ router.put("/api/user/update", (req: Request, res: Response) => {
     .catch((error) => {
       console.log(error);
     });
+});
+
+// get one user // profile user
+
+router.get("/api/user/profile:id", async (req: Request, res: Response) => {
+  const { id } = req.body._id;
+
+  const user = await UserModel.findOne(id);
+  return res.status(200).json(user);
+});
+
+router.get("/api/user/profile:email", async (req: Request, res: Response) => {
+  const { email } = req.body.email;
+
+  const user = await UserModel.findOne(email);
+  return res.status(200).json(user);
 });
 
 export { router as userRouter };

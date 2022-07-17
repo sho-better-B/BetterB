@@ -13,66 +13,68 @@ const routes: Array<RouteConfig> = [
     path: "/about",
     name: "about",
 
-    component: () =>
-      import( "../views/AboutView.vue"),
+    component: () => import("../views/AboutView.vue"),
   },
   {
     path: "/diet",
     name: "diet",
 
-    component: () =>
-      import( "../views/dietView.vue"),
+    component: () => import("../views/dietView.vue"),
   },
   {
     path: "/blogs",
     name: "blogs",
 
-    component: () =>
-      import( "../views/blogsView.vue"),
+    component: () => import("../views/blogsView.vue"),
   },
   {
     path: "/signIn",
     name: "signIn",
 
-    component: () =>
-      import( "../views/SignIn.vue"),
+    component: () => import("../views/SignIn.vue"),
   },
   {
     path: "/training",
     name: "training",
 
-    component: () =>
-      import( "../views/Training.vue"), 
+    component: () => import("../views/Training.vue"),
   },
   {
     path: "/push",
     name: "push",
 
-    component: () =>
-      import( "../views/Push.vue"), 
+    component: () => import("../views/Push.vue"),
   },
   {
     path: "/pull",
     name: "pull",
 
-    component: () =>
-      import( "../views/Pull.vue"), 
+    component: () => import("../views/Pull.vue"),
   },
   {
     path: "/legs",
     name: "legs",
 
-    component: () =>
-      import( "../views/Legs.vue"), 
-  }
-  ,
+    component: () => import("../views/Legs.vue"),
+  },
   {
     path: "/core",
     name: "core",
 
-    component: () =>
-      import( "../views/Core.vue"), 
-  }
+    component: () => import("../views/Core.vue"),
+  },
+  {
+    path: "/profile",
+    name: "profile",
+
+    component: () => import("../views/profile.vue"),
+  },
+  {
+    path: "/signUp",
+    name: "signUp",
+
+    component: () => import("../views/signUp.vue"),
+  },
 ];
 
 const router = new VueRouter({

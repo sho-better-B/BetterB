@@ -1,18 +1,18 @@
 <template>
   <div class="x">
-
-    <Diet/>
+    <h1>profile</h1>
+    <Profile />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Diet from "@/components/diet.vue";
+import Profile from "../components/profile.vue";
 
 @Component({
   components: {
-    Diet,
+    Profile,
   },
 })
-export default class dietView extends Vue {}
+export default class ProfileView extends Vue {}
 </script>

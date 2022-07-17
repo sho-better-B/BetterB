@@ -1,0 +1,22 @@
+<template>
+  <div class="about">
+    <h1>sign up please</h1>
+    <p>
+      in case this is your first visit , please sign in before
+      <a href="http://localhost:8080/signIn">here</a>
+    </p>
+    <SignUp />
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import SignUp from "@/components/signUp.vue";
+
+@Component({
+  components: {
+    SignUp,
+  },
+})
+export default class SignUpView extends Vue {}
+</script>

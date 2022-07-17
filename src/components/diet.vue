@@ -8,7 +8,7 @@
         placeholder="description"
         class="solo-input-diet"
       />
-      <button @click="showinputs(), addRecipe()" class="diet-button">
+      <button class="diet-buttons" @click="showinputs(), addRecipe()" >
         Add recipe
       </button>
     </div>
@@ -76,7 +76,12 @@ template {
   margin-right: 50px;
   margin-left: 100px;
   margin-top: 40px;
-  border-radius: 50px;
+    border-radius: 100px;
+border-top-left-radius: 200px;
+border-top-right-radius: 200px;
+}
+h1{
+   margin-left: 150px;
 }
 .dietBlock:hover {
   cursor: pointer;
@@ -84,28 +89,26 @@ template {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.dietImage {
-  width: 300px;
+
+.dietImage{
+   width: 400px;
   height: 300px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+border-top-left-radius: 200px;
+border-top-right-radius: 200px;
+
+
+
+
 }
 /* delete and recipe name */
-.recipe-name {
-  background-color: antiquewhite;
-  width: 300px;
+.recipe-name{
+  background-color: white;
+   width: 400px;
   height: fit-content;
-  border-radius: 50px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-}
-
-/* inputs and buttons */
-.dietinput {
-  display: flex;
-  margin-left: 30%;
+  border-radius: 100px;
+box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+border-top-left-radius: 200px;
+border-top-right-radius: 200px;
 }
 .solo-input-diet {
   padding: 6px 12px;
@@ -143,8 +146,14 @@ template {
   line-height: 1;
   transition: transform 200ms;
   margin-bottom: 30px;
+ margin-left: 150px;
 }
 .diet-button:hover {
   transform: translateY(-2px);
+}
+.diet-buttons{
+  margin-left: 50%;
+  margin-top: 20px;
+ 
 }
 </style>

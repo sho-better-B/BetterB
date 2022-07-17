@@ -1,8 +1,15 @@
 <template>
   <div id="app">
+
+    <!-- <nav class="nav"> -->
+
+
     <!-- //trying authen -->
     <!-- <nav class="nav">
       <h1>Better-B</h1>
+<<<<<<< HEAD
+>>>>>>> 550823dd4ed841cbde4f758e348555239b2c8dce
+=======
       <br />
       <router-link to="/"><h1>Home</h1></router-link>
       <router-link to="/about"><h1>About</h1></router-link>
@@ -19,6 +26,7 @@
         />
       </router-link>
     </nav>
+>>>>>>> de0780aa0bf866b6c5301eeadfbfe568b1fd8fa5
       <router-link to="/" ><h1> Home</h1></router-link> 
       <router-link to="/about" ><h1>About</h1></router-link> 
       <router-link to="/training" ><h1>Training</h1></router-link>
@@ -100,10 +108,13 @@
           </div>
         </div>
       </div>
-    </nav>
+   
 
+  </nav>
     <router-view />
+  
   </div>
+   
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
@@ -113,6 +124,14 @@ export default defineComponent({
 </script>
 
 <style>
+
+
+
+
+
+
+ /* #app {
+=======
 /* body{
   background-color: #f5f5f5;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
@@ -143,6 +162,23 @@ export default defineComponent({
 
 
  }
+ nav  .imgs-fluid{
+   width: 100px;
+  height: 80px;
+  position: absolute;
+  padding-top: 0;
+  margin-top: 0 ;
+  padding-left: 70px;
+  border-radius: 300px;
+}
+nav .titles{
+  font-size: 50px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding-top: 10px;
+  padding-left: 60px;
+}
  nav {
   position: relative;
 
@@ -159,6 +195,7 @@ export default defineComponent({
   margin-bottom: 0;
   padding-bottom: 0;
     overflow: hidden;
+    border-radius: 30px;
 
  }
  nav h1:hover{
@@ -191,11 +228,10 @@ TEXT-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   height: 30px;
 }
 .navbar {
-  background-image: linear-gradient(
-    to top,
-    #000000 0%,
-    #000000 52%,
-    #0a0b0e 100%
-  );
+ background-image :linear-gradient(to top, #f6f5f5 0%, #f8f6f7 52%, #f0f1f5 100%); 
+  color: white;
+  font-size: 20px;
+   color: #0b0303;
+     text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 </style>

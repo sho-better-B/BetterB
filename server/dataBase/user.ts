@@ -1,7 +1,7 @@
 import { Document, Schema, model } from "mongoose";
 
 // 1. Create a new model interface
-interface IUser extends Document {
+export default interface IUser extends Document {
   name: string;
   img: string;
   email: string;
@@ -15,11 +15,11 @@ interface IUser extends Document {
 const UserSchema = new Schema<IUser>({
   name: {
     type: String,
-    required: true,
+  
   },
   img: {
     type: String,
-    required: true,
+
   },
   email: {
     type: String,

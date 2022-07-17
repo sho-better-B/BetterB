@@ -17,7 +17,8 @@ export abstract class userApi {
     weight: number,
     height: number,
     IMC: number,
-    description: string
+    description: string,
+    password: string
   ) {
     const url = "http://localhost:2000/api/user/add";
     const resp = axios.post<IUser>(url, {
@@ -28,6 +29,7 @@ export abstract class userApi {
       height: height,
       imc: IMC,
       description: description,
+      password: password
     });
     return resp;
   }

@@ -136,13 +136,13 @@ export default defineComponent({
   background-color: #f5f5f5;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 } */
-/* #app {
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #384552;
-} */
+}
 
 /* nav bar css */
 /* nav h1 {

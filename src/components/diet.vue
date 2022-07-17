@@ -80,9 +80,7 @@ template {
 border-top-left-radius: 200px;
 border-top-right-radius: 200px;
 }
-h1{
-   margin-left: 150px;
-}
+
 .dietBlock:hover {
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -146,13 +144,13 @@ border-top-right-radius: 200px;
   line-height: 1;
   transition: transform 200ms;
   margin-bottom: 30px;
- margin-left: 150px;
+
 }
 .diet-button:hover {
   transform: translateY(-2px);
 }
 .diet-buttons{
-  margin-left: 50%;
+
   margin-top: 20px;
  
 }

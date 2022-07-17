@@ -13,7 +13,7 @@ const router = express.Router();
 // get all users
 router.get("/api/user", async (req: Request, res: Response) => {
   const user = await UserModel.find({});
-  return res.status(200).json(user);
+  return res.send(user);
 });
 
 // add user
@@ -50,9 +50,10 @@ router.post("/api/user/add", async (req: Request, res: Response) => {
   const imc = req.body.imc;
 
   // const passwordee =await bcrypt.hash(passwords,salt)
-  bcrypt.genSalt(10);
+
   const salt = await bcrypt.genSalt(10);
-  const newpassword = await bcrypt.hash(password, salt);
+  const newpassword = await bcrypt.hash(password, salt).catch(err=>console.error(err));
+
 
   const newUser = await new UserModel({
     _id: new mongoose.Types.ObjectId(),
@@ -72,7 +73,7 @@ router.post("/api/user/add", async (req: Request, res: Response) => {
     })
     .catch((error) => {
       console.log(error);
-      res.json(error);
+ 
     });
 });
 // admin can delete user

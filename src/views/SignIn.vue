@@ -49,6 +49,13 @@
           class="form-control inputs"
           placeholder="height in meters"
         />
+         <input
+          v-model="passwoord"
+          type="password"
+          name="passwoord"
+          class="form-control inputs"
+          placeholder="passwoord "
+        />
       </div>
       <input
         v-model="password"
@@ -99,6 +106,8 @@ export default class User extends Vue {
   IMC = 0;
   description = "";
   BooleanAllUsers = false;
+    passwoord=""
+
 
   async mounted(): Promise<void> {
     this.users = await userApi.getAllusers();
@@ -139,7 +148,8 @@ export default class User extends Vue {
       this.weight,
       this.height,
       this.IMC,
-      this.description
+      this.description,
+      this.passwoord
     );
   }
   changeBooleanAllUsers() {

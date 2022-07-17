@@ -66,7 +66,7 @@ export default class AllUsers extends Vue {
 </script>
 <style>
 .user {
-  background-color: rgb(252, 245, 238);
+  background-color: white;
   float: left;
   margin-right: 50px;
   margin-left: 100px;

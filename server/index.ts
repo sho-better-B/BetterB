@@ -34,10 +34,10 @@ app.use(legsRouter);
 import { coreRouter } from "./Router/core";
 
 app.use(coreRouter);
-// // user
-// import { userRouter } from "./Router/user";
+// user
+import { userRouter } from "./Router/user";
 
-// app.use(userRouter);
+app.use(userRouter);
 //signup
 import { signupRouter } from "./Router/signup";
 

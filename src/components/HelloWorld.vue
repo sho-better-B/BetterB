@@ -67,6 +67,7 @@ margin-top:150px;
   height: 600px;
   position :absolute;
   padding: 0;
+  margin-left: -950px;
 }
 .titles{
 position: absolute;
@@ -113,8 +114,8 @@ text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30
  font-weight: 500;
  color: white;
   position: absolute;
-  margin-top: 750px;
-margin-left: 300px;
+  margin-top: 800px;
+margin-left: -650px;
                 }
                 
 /* footer */

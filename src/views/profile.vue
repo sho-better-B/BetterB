@@ -1,6 +1,6 @@
 <template>
   <div class="x">
-    <h1>profile</h1>
+    <br /><br />
     <Profile />
   </div>
 </template>
@@ -16,3 +16,9 @@ import Profile from "../components/profile.vue";
 })
 export default class ProfileView extends Vue {}
 </script>
+<style>
+.x {
+  text-align: center;
+  margin: auto;
+}
+</style>

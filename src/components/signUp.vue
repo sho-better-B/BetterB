@@ -1,8 +1,8 @@
 <template>
-  <div class="">
+  <div class="bodyy">
     <form>
       <div class="mb-3 row">
-        <label for="email" class="col-sm-2 col-form-label">Email : </label>
+        <label for="email" class="col-sm-2 col-form-label">Email </label>
         <div class="col-sm-10">
           <input
             type="text"
@@ -17,7 +17,7 @@
       </div>
       <div class="mb-3 row">
         <label for="inputPassword" class="col-sm-2 col-form-label"
-          >Password :
+          >Password
         </label>
         <div class="col-sm-10">
           <input
@@ -36,7 +36,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
 
-      <!--  -->
+      <!--   -->
     </form>
   </div>
 </template>
@@ -49,4 +49,11 @@ export default class SignUp extends Vue {}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.bodyy {
+  display: flex;
+  align-items: center;
+  place-items: center;
+  justify-content: center;
+}
+</style>

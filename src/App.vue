@@ -51,7 +51,7 @@
               >Diet</router-link
             >
             <router-link class="nav-link" to="/blogs" style="width: 7rem"
-              >Blos</router-link
+              >Blogs</router-link
             >
             <router-link class="nav-link" to="/training" style="width: 7rem"
               >Training</router-link

@@ -1,10 +1,13 @@
 <template>
-  <div class="about">
-    <h1>sign up please</h1>
-    <p>
-      in case this is your first visit , please sign in before
-      <a href="http://localhost:8080/signIn">here</a>
-    </p>
+  <div class="">
+    <div class="title">
+      <h1>sign up please</h1>
+      <p>
+        in case this is your first visit , please sign in before
+        <a href="http://localhost:8080/signIn">here</a>
+      </p>
+      <br />
+    </div>
     <SignUp />
   </div>
 </template>
@@ -20,3 +23,14 @@ import SignUp from "@/components/signUp.vue";
 })
 export default class SignUpView extends Vue {}
 </script>
+<style scoped>
+body {
+  align-content: center;
+}
+.title {
+  align-content: center;
+  align-items: center;
+  place-items: center;
+  justify-content: center;
+}
+</style>

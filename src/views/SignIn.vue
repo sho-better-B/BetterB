@@ -38,7 +38,7 @@
           type="text"
           name="weigth"
           class="form-control inputs"
-          placeholder="weigth on KG"
+          placeholder="weigth in KG"
         />
       </div>
       <div>
@@ -47,7 +47,7 @@
           type="text"
           name="height"
           class="form-control inputs"
-          placeholder="height on Metre"
+          placeholder="height in meters"
         />
       </div>
       <div>
@@ -72,18 +72,23 @@
             <h5>we have {{ users.length }} users :</h5>
             <v-list-item :key="index" v-for="(user, index) in users">
               <div class="user">
-                {{ user.name }} , {{ user.email }} , {{ user.imc }}
+                <div class="user-name">
+                  {{ user.name }} , {{ user.email }} ,
 
-                <br />
-                <img
-                  :src="user.img"
-                  alt="user Image"
-                  class="userImg"
-                  width="{200}"
-                  height="{200}"
-                />
-                <p>you size is {{ user.description }}</p>
-                <button @click="deleteData(user._id)">delete user</button>
+                  <br />
+                  <img
+                    :src="user.img"
+                    alt="user Image"
+                    class="userImg"
+                    width="{200}"
+                    height="{200}"
+                  />
+                  <p>
+                    Your Body Mass Index (IMC) is {{ user.imc }} , This is
+                    considered {{ user.description }} .
+                  </p>
+                  <button @click="deleteData(user._id)">delete user</button>
+                </div>
               </div>
             </v-list-item>
           </v-list>
@@ -115,8 +120,8 @@ export default class User extends Vue {
   name = "";
   img = "";
   email = "";
-  weight = 0;
-  height = 0;
+  weight = null;
+  height = null;
   test = true;
   IMC = 0;
   description = "";
@@ -130,14 +135,14 @@ export default class User extends Vue {
     this.IMC = Number((weight / (height * height)).toFixed(2));
     console.log(this.IMC);
     if (this.IMC < 18.5) {
-      this.description = "Underweight";
+      this.description = " Underweight ";
 
       return " Underweight " + this.IMC;
     } else if (this.IMC < 25) {
-      this.description = "normal";
+      this.description = " Normal ";
       return " normal " + this.IMC;
     } else if (this.IMC < 35) {
-      this.description = "Overweight";
+      this.description = " Overweight";
       return " Overweight " + this.IMC;
     } else {
       this.description = "Obesity";
@@ -185,16 +190,30 @@ export default class User extends Vue {
 
 <style>
 .user {
-  width: 400px;
-  padding: 8px;
-  border: 3px solid rgb(0, 0, 0);
-  margin: auto;
-  box-shadow: 5px 8px #17221f;
-  text-align: center;
+  background-color: rgb(252, 245, 238);
+  float: left;
+  margin-right: 50px;
+  margin-left: 100px;
+  margin-top: 40px;
+  border-radius: 50px;
+}
+.user:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.user-name {
+  background-color: antiquewhite;
+  width: 300px;
+  height: fit-content;
+  border-radius: 50px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .userImg {
-  width: 200;
-  height: 200;
+  width: 200px;
+  height: 200px;
 }
 .SignIn {
   width: 20%;

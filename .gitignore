@@ -1,6 +1,10 @@
 package-lock.json
+<<<<<<< HEAD
 .DS_Store
+=======
+>>>>>>> 550823dd4ed841cbde4f758e348555239b2c8dce
 node_modules
+.DS_Store
 /dist
 
 

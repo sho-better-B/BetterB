@@ -20,7 +20,7 @@
       <div class="dietBlock">
         <div class="recipe-name">
           <img :src="item.image" alt="" class="dietImage" />
-
+              <p>{{ item.description }}</p>
           <h1>{{ item.nameReceipe }}</h1>
 
           <button @click="deleteData(item._id)" class="diet-button">
@@ -70,15 +70,14 @@ export default class Diet extends Vue {
 template {
   background-color: bisque;
 }
+h1{
+  font-size: 30px;
+}
 /* diet space */
 .dietBlock {
   float: left;
-  margin-right: 50px;
-  margin-left: 100px;
+  margin-left: 185px;
   margin-top: 40px;
-    border-radius: 100px;
-border-top-left-radius: 200px;
-border-top-right-radius: 200px;
 }
 
 .dietBlock:hover {
@@ -91,8 +90,8 @@ border-top-right-radius: 200px;
 .dietImage{
    width: 400px;
   height: 300px;
-border-top-left-radius: 200px;
-border-top-right-radius: 200px;
+/* border-top-left-radius: 200px;
+border-top-right-radius: 200px; */
 
 
 
@@ -103,10 +102,11 @@ border-top-right-radius: 200px;
   background-color: white;
    width: 400px;
   height: fit-content;
-  border-radius: 100px;
+  /* border-radius: 100px; */
 box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-border-top-left-radius: 200px;
-border-top-right-radius: 200px;
+/* border-top-left-radius: 200px;
+border-top-right-radius: 200px; */
+font-size: 20px;
 }
 .solo-input-diet {
   padding: 6px 12px;

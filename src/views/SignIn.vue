@@ -64,6 +64,7 @@
       <!-- <input type="password" name="password" placeholder="Password"  /> -->
 
       <!-- button to show all the users -->
+       
       <button @click="calcIMC(height, weight), addUser()">Signin</button>
     </form>
 

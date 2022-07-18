@@ -1,39 +1,5 @@
 <template>
   <div id="app">
-
-    <!-- <nav class="nav"> -->
-
-
-    <!-- //trying authen -->
-    <!-- <nav class="nav">
-      <h1>Better-B</h1>
-<<<<<<< HEAD
->>>>>>> 550823dd4ed841cbde4f758e348555239b2c8dce
-=======
-      <br />
-      <router-link to="/"><h1>Home</h1></router-link>
-      <router-link to="/about"><h1>About</h1></router-link>
-      <router-link to="/training"><h1>Training</h1></router-link>
-      <router-link to="/diet"><h1>Diet</h1></router-link>
-      <router-link to="/blogs"><h1>Blogs</h1></router-link>
-      <router-link to="/signIn"><h1>Sign In</h1></router-link>
-      <router-link to="/signUp"><h1>Sign Up</h1></router-link>
-
-      <router-link to="/profile">
-        <img
-          src="https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png"
-          alt=""
-        />
-      </router-link>
-    </nav>
->>>>>>> de0780aa0bf866b6c5301eeadfbfe568b1fd8fa5
-      <router-link to="/" ><h1> Home</h1></router-link> 
-      <router-link to="/about" ><h1>About</h1></router-link> 
-      <router-link to="/training" ><h1>Training</h1></router-link>
-      <router-link to="/diet" ><h1>Diet</h1></router-link>
-      <router-link to="/blogs" ><h1>Blogs</h1></router-link> 
-      <router-link to="/signIn" ><h1>sign In</h1></router-link>
-    </nav> -->
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <router-link class="nav-link" to="/" style="width: 10rem"
@@ -108,13 +74,9 @@
           </div>
         </div>
       </div>
-   
-
-  </nav>
+    </nav>
     <router-view />
-  
   </div>
-   
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
@@ -124,13 +86,7 @@ export default defineComponent({
 </script>
 
 <style>
-
-
-
-
-
-
- /* #app {
+/* #app {
 =======
 /* body{
   background-color: #f5f5f5;
@@ -228,10 +184,15 @@ TEXT-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   height: 30px;
 }
 .navbar {
- background-image :linear-gradient(to top, #f6f5f5 0%, #f8f6f7 52%, #f0f1f5 100%); 
+  background-image: linear-gradient(
+    to top,
+    #f6f5f5 0%,
+    #f8f6f7 52%,
+    #f0f1f5 100%
+  );
   color: white;
   font-size: 20px;
-   color: #0b0303;
-     text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: #0b0303;
+  text-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 </style>

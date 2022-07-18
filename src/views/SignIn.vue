@@ -68,6 +68,7 @@
         <h4>your Imc is : {{ IMC }}</h4>
       </div>
 
+
       <!-- add user button -->
       <button
         class="btn btn-primary"

@@ -48,12 +48,14 @@ router.post("/api/user/add", async (req: Request, res: Response) => {
   const weight = req.body.weight;
   const height = req.body.height;
   const imc = req.body.imc;
+  const description = req.body.description;
 
   // const passwordee =await bcrypt.hash(passwords,salt)
 
   const salt = await bcrypt.genSalt(10);
-  const newpassword = await bcrypt.hash(password, salt).catch(err=>console.error(err));
-
+  const newpassword = await bcrypt
+    .hash(password, salt)
+    .catch((err) => console.error(err));
 
   const newUser = await new UserModel({
     _id: new mongoose.Types.ObjectId(),
@@ -64,6 +66,7 @@ router.post("/api/user/add", async (req: Request, res: Response) => {
     weight: weight,
     height: height,
     imc: imc,
+    description: description,
   });
   newUser
     .save()
@@ -73,7 +76,6 @@ router.post("/api/user/add", async (req: Request, res: Response) => {
     })
     .catch((error) => {
       console.log(error);
- 
     });
 });
 // admin can delete user

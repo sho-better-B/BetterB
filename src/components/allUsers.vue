@@ -11,7 +11,7 @@
           <v-list-item :key="index" v-for="(user, index) in users">
             <div class="user">
               <div class="user-name">
-                {{ user.name }} , {{ user.email }} ,
+                {{ user.name }}
 
                 <br />
                 <img
@@ -23,9 +23,14 @@
                 />
                 <p>
                   Your Body Mass Index (IMC) is {{ user.imc }} , This is
-                  considered {{ user.description }} .
+                  considered as {{ user.description }} .
                 </p>
-                <button @click="deleteData(user._id)">delete user</button>
+                <button
+                  class="btn btn-outline-danger"
+                  @click="deleteData(user._id)"
+                >
+                  delete user
+                </button>
               </div>
             </div>
           </v-list-item>

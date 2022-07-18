@@ -57,54 +57,26 @@
           placeholder="passwoord "
         />
       </div>
+      <input
+        v-model="password"
+        type="password"
+        name="password"
+        placeholder="Password"
+        class="form-control inputs"
+      />
       <div>
         <h4>your Imc is : {{ IMC }}</h4>
       </div>
 
-      <!-- <input type="password" name="password" placeholder="Password"  /> -->
 
-      <!-- button to show all the users -->
-       
-      <button @click="calcIMC(height, weight), addUser()">Signin</button>
+      <!-- add user button -->
+      <button
+        class="btn btn-primary"
+        @click="calcIMC(height, weight), addUser()"
+      >
+        Sign Up
+      </button>
     </form>
-
-    <br /><br /><br />
-    <!-- get all user testing -->
-
-    <div><button @click="changeBooleanAllUsers()">show all users</button></div>
-    <div v-if="BooleanAllUsers === true" class="allusers">
-      <v-layout>
-        <v-flex>
-          <v-list>
-            <h1>all Users</h1>
-            <h5>we have {{ users.length }} users :</h5>
-            <v-list-item :key="index" v-for="(user, index) in users">
-              <div class="user">
-                <div class="user-name">
-                  {{ user.name }} , {{ user.email }} ,
-
-                  <br />
-                  <img
-                    :src="user.img"
-                    alt="user Image"
-                    class="userImg"
-                    width="{200}"
-                    height="{200}"
-                  />
-                  <p>
-                    Your Body Mass Index (IMC) is {{ user.imc }} , This is
-                    considered {{ user.description }} .
-                  </p>
-                  <button @click="deleteData(user._id)">delete user</button>
-                </div>
-              </div>
-            </v-list-item>
-          </v-list>
-        </v-flex>
-      </v-layout>
-
-      <AllUsers />
-    </div>
   </div>
 </template>
 
@@ -130,6 +102,7 @@ export default class User extends Vue {
   email = "";
   weight = null;
   height = null;
+  password = "";
   test = true;
   IMC = 0;
   description = "";

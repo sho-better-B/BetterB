@@ -6,38 +6,48 @@
           <h2>Profile</h2>
           <br />
           <img
-            src="https://i.imgur.com/stD0Q19.jpg"
+            :src="users[users.length - 1].img"
             width="100"
             class="rounded-circle"
           />
-          <h3 class="mt-2">Name</h3>
-          <span class="mt-1 clearfix">email</span>
+          <h3 class="mt-2">{{ users[users.length - 1].name }}</h3>
+          <span class="mt-1 clearfix">
+            {{ users[users.length - 1].email }}</span
+          >
 
           <div class="row mt-3 mb-3">
             <div class="col-md-4">
               <h5>height</h5>
-              <span class="num">10</span>
+              <span class="num">{{ users[users.length - 1].height }}</span>
             </div>
             <div class="col-md-4">
               <h5>weight</h5>
-              <span class="num">10</span>
+              <span class="num">{{ users[users.length - 1].weight }}</span>
             </div>
             <div class="col-md-4">
               <h5>IMC</h5>
-              <span class="num">10</span>
+              <span class="num">{{ users[users.length - 1].imc }}</span>
             </div>
           </div>
 
           <hr class="line" />
 
-          <small class="mt-4">you have IMC description</small>
+          <small class="mt-1">
+            Your Body Mass Index (IMC) is {{ users[users.length - 1].imc }} ,
+            This is considered as
+            {{ users[users.length - 1].description }} .</small
+          >
         </div>
       </div>
     </div>
     <br /><br /><br />
     <!-- button to show all the users -->
 
-    <div><button @click="changeBooleanAllUsers()">show all users</button></div>
+    <div>
+      <button class="btn btn-light" @click="changeBooleanAllUsers()">
+        show all users
+      </button>
+    </div>
     <div v-if="BooleanAllUsers === true" class="allusers">
       <!-- get all users -->
       <AllUsers />
@@ -110,8 +120,8 @@ body {
   color: #fff;
   width: 350px;
   border-radius: 10px;
-  background: linear-gradient(145deg, #5e6400, #496108);
-  box-shadow: 20px 20px 60px #66a305, -20px -20px 60px #585e06;
+  background: linear-gradient(145deg, #4d4b34, #839438);
+  box-shadow: 20px 20px 60px #989b94, -20px -20px 60px #535730;
   border: none;
 }
 
